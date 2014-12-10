@@ -5,7 +5,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'Lokaltog/vim-powerline'
@@ -16,13 +15,7 @@ Plugin 'vim-scripts/The-NERD-tree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'tpope/vim-rails'
-
-" plugin from http://vim-scripts.org/vim/scripts.html
-
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
-
-
 
 filetype plugin indent on    " required
 syntax on
@@ -32,9 +25,13 @@ set autoindent
 set laststatus=2
 set encoding=utf8
 
+" 256 terminal colors
+set t_Co=256
+
 " Molokai theme
 colorscheme molokai
 let g:molokai_original = 1
+
 "let g:rehash256 = 1
 let g:Powerline_symbols = 'fancy'
 
@@ -44,8 +41,6 @@ nmap <C-e> :e#<CR>
 " " Move between open buffers.
 map <C-n> :bnext<CR>
 map <C-p> :bprev<CR>
-
-
  
 " Set up a custom leader, so we actually use it
 let mapleader=","
@@ -53,6 +48,7 @@ let maplocalleader=","
 
 let g:normal_font="Monaco:h13"
 " NERD_tree.vim
+map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\~$', '\.pyc$']
 "
 " " ctrlp.vim (replaces FuzzyFinder and Command-T)
@@ -63,6 +59,7 @@ let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
+
+" CtrlP search in buffer of opened files
 nmap ; :CtrlPBuffer<CR>
 
-set t_Co=256
