@@ -1,3 +1,5 @@
 [user]
 	name = Tobias Munter
 	email = tobias@muntr.com
+[push]
+	default = simple
